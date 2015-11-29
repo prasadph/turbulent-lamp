@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Food, Customer
+from .models import Food, Customer, Order
 
 
 class FoodSerializer(serializers.HyperlinkedModelSerializer):
@@ -8,7 +8,7 @@ class FoodSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Food
-        fields = ('name', 'cost')
+        fields = ('name', 'cost', 'description')
 
 
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,3 +17,13 @@ class CustomerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Customer
+        fields = ('name', 'sex', 'created')
+
+
+class OrderSerializer(serializers.HyperlinkedModelSerializer):
+
+    """docstring for OrderSerializer"""
+
+    class Meta:
+        model = Order
+        fields = ('amount', 'address', 'created')

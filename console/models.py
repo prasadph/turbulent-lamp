@@ -90,7 +90,7 @@ class Detail(models.Model):
 # it might be better if we save the current value of the food items
 # coz its possible to generate reciepts without reverse-
 # engineering the rates
-# trying this will make amount variable in order class useless 
+# trying this will make amount variable in order class useless
 
     food = models.ForeignKey(Food)
     order = models.ForeignKey(Order)
